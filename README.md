@@ -12,4 +12,12 @@ Quick script to toggle the power of my PTAC (air conditioner) from my phone.
 
 1. Connect Broadlink device to your wifi network using the horrible official app or [python-broadlink](https://github.com/mjg59/python-broadlink).
 2. Create an IFTTT applet using the Button widget and Adafruit service.
+3. Run this script on an always-on computer on your LAN.
 
+## Running
+
+```
+$ pip install pipenv
+$ pipenv install
+$ python main.py
+```
