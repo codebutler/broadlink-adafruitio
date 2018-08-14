@@ -43,7 +43,11 @@ class BroadlinkAdafruit:
         client.on_message = self.__on_message
         client.connect()
 
-        client.loop_blocking()
+        try:
+            client.loop_blocking()
+        except Exception as err:
+            print('Error with Adafruit client: %s' % err)
+            client.disconnect()
 
     def __on_connected(self, client):
         feed_id = self.config.get('adafruit_io', 'feed_id')
