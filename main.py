@@ -20,7 +20,8 @@ class BroadlinkAdafruit:
 
     def connect(self):
         self.__connect_broadlink()
-        self.__connect_adafruit()
+        while True:
+            self.__connect_adafruit()
 
     def __connect_broadlink(self):
         print('Searching for Broadlink devices...')
