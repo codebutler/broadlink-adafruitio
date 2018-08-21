@@ -22,6 +22,7 @@ class BroadlinkAdafruit:
         self.__connect_broadlink()
         while True:
             self.__connect_adafruit()
+            time.sleep(15)
 
     def __connect_broadlink(self):
         print('Searching for Broadlink devices...')
@@ -42,9 +43,9 @@ class BroadlinkAdafruit:
         client.on_connect = self.__on_connected
         client.on_disconnect = self.__on_disconnected
         client.on_message = self.__on_message
-        client.connect()
 
         try:
+            client.connect()
             client.loop_blocking()
         except Exception as err:
             print('Error with Adafruit client: %s' % err)
